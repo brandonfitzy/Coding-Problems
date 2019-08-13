@@ -15,7 +15,7 @@ int times[3][2] = {
 
 int rows= sizeof(times)/sizeof(times[0]);
 
-int cols = sizeof(times[0])/rows;
+int cols = 2;
 
 int largestinarray();
 
