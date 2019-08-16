@@ -8,16 +8,16 @@ char uppercase[]={"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 char lowercase[]={"abcdefghijklmnopqrstuvwxyz"};
 char specialchars[]={'!','@','#','$','%','^','&','*','(',')','?'};
 
-void passwordvalidator(int *a, int b);
+void passwordvalidator(char *a, int b);
 
 int main(){
 	char password[]={"Password1!"};
-    int * passwordpointer = & password;
+    char * passwordpointer = & password;
 	passwordvalidator(passwordpointer, strlen(password));
 	return 0;
 }
 
-void passwordvalidator(int *a, int b){
+void passwordvalidator(char *a, int b){
 	int l;
 	char array[b];
 	for (l=0;l<b;l++){
@@ -29,22 +29,22 @@ void passwordvalidator(int *a, int b){
 		for (j=0;j<=strlen(numbers);j++){
 			if (array[i]==numbers[j]){
 				num=1;
-			} 
+			}
 		}
 		for (j=0;j<=strlen(uppercase);j++){
 			if (array[i]==uppercase[j]){
 				up=1;
-			} 
+			}
 		}
 		for (j=0;j<=strlen(lowercase);j++){
 			if (array[i]==lowercase[j]){
 				low=1;
-			} 
+			}
 		}
 		for (j=0;j<=strlen(specialchars);j++){
 			if (array[i]==specialchars[j]){
 				spec=1;
-			} 
+			}
 		}
 	}
 	if (num==0){
