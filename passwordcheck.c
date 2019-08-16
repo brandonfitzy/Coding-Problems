@@ -13,69 +13,70 @@ void passwordvalidator( char *a, int b );
 int main()
 {
 	char password[] = { "manatees" };
-    char *passwordpointer = &password;
-	passwordvalidator( passwordpointer, strlen( password ) );
+    char *passwordpointer;
+    int len;
+    passwordpointer = password;
+    len = strlen( password );
+	passwordvalidator( passwordpointer, len );
 	return 0;
 }
 
 void passwordvalidator( char *a, int b )
 {
-	int l;
+	int l; int num = 0; int up = 0; int low = 0; int spec = 0; int i; int j;
 	char array[b];
-	for ( l=0; l<b; l++ )
+	for ( l = 0 ; l < b ; l++ )
     {
-		array[l]=a[l];
+		array[l] = a[l];
 	}
-	int num=0; int up=0; int low=0; int spec=0;
-	int i; int j;
-	for ( i=0; i<strlen(array); i++ )
+	for ( i = 0 ; i < strlen( array ) ; i++ )
 	{
-		for ( j=0; j<=strlen( numbers ); j++ )
+		for ( j = 0 ; j <= strlen( numbers ) ; j++ )
 		{
-			if ( array[i]==numbers[j] )
+			if ( array[i] == numbers[j] )
 			{
-				num=1;
+				num = 1;
 			}
 		}
-		for ( j=0; j<=strlen( uppercase ); j++ )
+		for ( j = 0 ; j <= strlen( uppercase ) ; j++ )
 		{
-			if ( array[i]==uppercase[j] )
+			if ( array[i] == uppercase[j] )
 			{
-				up=1;
+				up = 1;
 			}
 		}
-		for ( j=0; j<=strlen(lowercase); j++ )
+		for ( j = 0 ; j <= strlen( lowercase ) ; j++ )
 		{
-			if ( array[i]==lowercase[j] )
+			if ( array[i] == lowercase[j] )
 			{
-				low=1;
+				low = 1;
 			}
 		}
-		for ( j=0; j<=strlen( specialchars ); j++ )
+		for ( j = 0 ; j <= strlen( specialchars ) ; j++ )
 		{
-			if ( array[i]==specialchars[j] )
+			if ( array[i] == specialchars[j] )
 			{
-				spec=1;
+				spec = 1;
 			}
 		}
 	}
-	if ( num==0 )
+	if ( num == 0 )
 	{
 		printf( "You need atleast one number. \n" );
 	}
-	if ( up==0 )
+	if ( up == 0 )
 	{
 		printf( "You need atleast one uppercase letter. \n" );
 	}
-	if ( low==0 )
+	if ( low == 0 )
 	{
 		printf( "You need atleast one lowercase letter. \n" );
 	}
-	if ( spec==0 )
+	if ( spec == 0 )
 	{
 		printf( "You need atleast one special character. \n" );
 	}
-	if ( num==1 && up==1 && low==1 && spec==1 ) 
+	if ( num == 1 && up == 1 && low == 1 && spec == 1 )
 	{
 		printf( "Password meets requirements. \n" );
 	}
